@@ -19,6 +19,6 @@
     </config-file>
 
     <source-file src="src/android/Otakeys.java" target-dir="src/com/mobiag/cordova/plugin" />
-    <framework custom="true" src="src/android/Otakeys.gradle" type="gradleReference" />
+    <framework src="src/android/otakeysLib" custom="true" />
   </platform>
 </plugin>
