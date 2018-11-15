@@ -2,3 +2,19 @@ dependencies {
   compile(group: 'com.otakeys.sdk', name: 'otakeys-sdk', version: '3.7.5', ext: 'aar')
 	compile(group: 'com.otakeys.sdk', name: 'otakeys-sdk', version: '3.7.5', classifier: 'javadoc')
 }
+
+allprojects {
+	repositories {
+		google()
+		jcenter()
+		mavenCentral()
+		maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+		maven {
+			credentials {
+				username nexusUsername
+				password nexusPassword
+			}
+			url "https://otakeys.jfrog.io/otakeys/android-keycore"
+		}
+	}
+}
