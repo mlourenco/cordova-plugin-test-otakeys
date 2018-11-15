@@ -1,0 +1,17 @@
+{
+  "name": "cordova-plugin-test-otakeys",
+  "version": "0.0.1",
+  "description": "OtaKeys SDK integration",
+  "cordova": {
+    "id": "cordova-plugin-test-otakeys",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlourenco/cordova-plugin-test-otakeys.git"
+  },
+  "author": "Mobiag",
+  "license": "MIT"
+}
