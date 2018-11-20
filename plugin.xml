@@ -12,13 +12,20 @@
     <clobbers target="otakeys" />
   </js-module>
   <platform name="android">
-    <config-file target="res/xml/config.xml" parent="/widget">
+    <source-file src="src/android/com/mobiag/cordova/plugin/otakeys/Otakeys.java" target-dir="src/com/phonegap/plugins/otakeys"/>
+    <config-file target="res/xml/config.xml" parent="/*">
       <feature name="Otakeys">
-        <param name="android-package" value="com.mobiag.cordova.plugin.Otakeys"/>
+        <param name="android-package" value="com.mobiag.cordova.plugin.otakeys.Otakeys"/>
       </feature>
     </config-file>
-
-    <source-file src="src/android/Otakeys.java" target-dir="src/com/mobiag/cordova/plugin" />
-    <framework src="src/android/otakeysLib" custom="true" />
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.BLUETOOTH" />
+      <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    </config-file>
+    <framework src="src/android/Otakeys.gradle" custom="true" type="gradleReference"/>
+    <framework src="com.android.support:support-v4:$ANDROID_SUPPORT_V4_VERSION"/>
+    <lib-file src="src/android/otakeys-sdk-3.10.1.aar"/>
+    <preference name="ANDROID_SUPPORT_V4_VERSION" default="27.+"/>
   </platform>
 </plugin>
