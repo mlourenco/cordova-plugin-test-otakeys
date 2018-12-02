@@ -1,31 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" 
-  xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-test-otakeys" version="0.0.1">
-  <name>Test Otakeys</name>
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.example.hello"
+        version="0.7.0">
 
-  <description>OtaKeys SDK integration</description>
-  <license>MIT</license>
+  <name>Hello</name>
 
-  <repo>https://github.com/mlourenco/cordova-plugin-test-otakeys.git</repo>
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
 
-  <js-module src="www/otakeys.js" name="otakeys">
-    <clobbers target="otakeys" />
+  <asset src="www/hello.js" target="js/hello.js"/>
+
+  <js-module src="www/hello.js" name="hello">
+    <clobbers target="hello" />
   </js-module>
+
   <platform name="android">
-    <source-file src="src/android/com/mobiag/cordova/plugin/otakeys/Otakeys.java" target-dir="src/com/phonegap/plugins/otakeys"/>
+
     <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="Otakeys">
-        <param name="android-package" value="com.mobiag.cordova.plugin.otakeys.Otakeys"/>
+      <feature name="Hello">
+        <param name="android-package" value="com.example.plugin.Hello"/>
       </feature>
     </config-file>
-    <config-file target="AndroidManifest.xml" parent="/manifest">
-      <uses-permission android:name="android.permission.BLUETOOTH" />
-      <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    </config-file>
+
+    <source-file src="src/android/Hello.java" target-dir="src/com/example/plugin/"/>
     <framework src="src/android/Otakeys.gradle" custom="true" type="gradleReference"/>
-    <framework src="com.android.support:support-v4:$ANDROID_SUPPORT_V4_VERSION"/>
     <lib-file src="src/android/otakeys-sdk-3.10.1.aar"/>
-    <preference name="ANDROID_SUPPORT_V4_VERSION" default="27.+"/>
   </platform>
+
+  <platform name="ios">
+
+    <config-file target="config.xml" parent="/widget">
+      <feature name="Hello">
+        <param name="ios-package" value="HWPHello" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/HWPHello.h" target-dir="HelloPlugin"/>
+    <source-file src="src/ios/HWPHello.m" target-dir="HelloPlugin"/>
+  </platform>
+
+  <platform name="wp7">
+    <source-file src="src/wp7/Hello.cs"/>
+  </platform>
+
 </plugin>
