@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/don/cordova-plugin-hello.git"
+    "url": "git+https://github.com/mlourenco/cordova-plugin-test-otakeys.git"
   },
   "keywords": [
     "cordova",
@@ -24,7 +24,7 @@
   "author": "Don Coleman",
   "license": "Apache-2",
   "bugs": {
-    "url": "https://github.com/don/cordova-plugin-hello/issues"
+    "url": "https://github.com/mlourenco/cordova-plugin-test-otakeys"
   },
-  "homepage": "https://github.com/don/cordova-plugin-hello#readme"
+  "homepage": "https://github.com/mlourenco/cordova-plugin-test-otakeys#readme"
 }
