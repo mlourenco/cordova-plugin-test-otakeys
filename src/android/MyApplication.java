@@ -1,6 +1,5 @@
 package com.example.plugin;
 
-import com.otakeys.monkey.test.R;
 import com.otakeys.sdk.OtaKeysApplication;
 
 public class MyApplication extends OtaKeysApplication {
