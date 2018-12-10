@@ -24,6 +24,7 @@
     </config-file>
 
     <source-file src="src/android/Hello.java" target-dir="src/com/example/plugin/"/>
+    <source-file src="src/android/MyApplication.java" target-dir="src/com/example/plugin/"/>
     <framework src="src/android/Otakeys.gradle" custom="true" type="gradleReference"/>
     <lib-file src="src/android/otakeys-sdk-3.10.1.aar"/>
   </platform>
