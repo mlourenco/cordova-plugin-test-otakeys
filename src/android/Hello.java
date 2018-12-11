@@ -28,7 +28,7 @@ public class Hello extends CordovaPlugin {
 
         } else  if (action.equals("test")) {
           String name = data.getString(0);
-          Api api = app.getApi();
+          Api api = myApp.getApi();
           Boolean bool = null == api;
           String message = "Teste OK, " + bool;
           callbackContext.success(message);
