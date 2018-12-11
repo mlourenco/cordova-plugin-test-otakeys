@@ -5,7 +5,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import com.otakeys.sdk.OtaKeysApplication;
-import com.otakeys.sdk.Api;
+import com.otakeys.sdk.service.Api;
 
 public class Hello extends CordovaPlugin {
 
