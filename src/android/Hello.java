@@ -4,6 +4,8 @@ import org.apache.cordova.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import com.otakeys.sdk.OtaKeysApplication;
+
 public class Hello extends CordovaPlugin {
 
     @Override
@@ -19,7 +21,7 @@ public class Hello extends CordovaPlugin {
 
         } else  if (action.equals("test")) {
           String name = data.getString(0);
-          String message = "Teste OK, " + name;
+          String message = "Teste OK, " + getOtaSdk() == null;
           callbackContext.success(message);
 
           return true;
@@ -29,4 +31,9 @@ public class Hello extends CordovaPlugin {
 
         }
     }
+
+    public OtaKeysApplication getOtaSdk() {
+        return ((OtaKeysApplication) getApplication()); 
+    }
+            
 }
