@@ -5,13 +5,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import com.otakeys.sdk.OtaKeysApplication;
+import com.otakeys.sdk.Api;
 
 public class Hello extends CordovaPlugin {
 
-    private MyApplication app;
+    private MyApplication myApp;
 
     public Hello(){
-        app = new MyApplication();
+        myApp = new MyApplication();
     }
 
     @Override
@@ -20,14 +21,16 @@ public class Hello extends CordovaPlugin {
         if (action.equals("greet")) {
 
             String name = data.getString(0);
-            String message = "Hello, " + ((Boolean)app.getApi()==null);
+            String message = "Hello, " + name;
             callbackContext.success(message);
 
             return true;
 
         } else  if (action.equals("test")) {
           String name = data.getString(0);
-          String message = "Teste OK, " + getOtaSdk() == null;
+          Api api = app.getApi();
+          Boolean bool = null == api;
+          String message = "Teste OK, " + bool;
           callbackContext.success(message);
 
           return true;
