@@ -13,6 +13,7 @@ public class Hello extends CordovaPlugin {
 
     public Hello(){
         myApp = new MyApplication();
+        myApp.onCreate();
     }
 
     @Override
