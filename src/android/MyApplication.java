@@ -1,7 +1,6 @@
 package com.example.plugin;
 
 import com.otakeys.sdk.OtaKeysApplication;
-import com.otakeys.sdk.Api;
 
 public class MyApplication extends OtaKeysApplication {
 
@@ -11,10 +10,6 @@ public class MyApplication extends OtaKeysApplication {
 		super.onCreate();
 
 		setDebugMode(true);
-    }
-    
-    public static Api getOtaAPI(){
-        return (Api) getApi();
     }
 
 }

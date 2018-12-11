@@ -8,13 +8,19 @@ import com.otakeys.sdk.OtaKeysApplication;
 
 public class Hello extends CordovaPlugin {
 
+    private MyApplication app;
+
+    public Hello(){
+        app = new MyApplication();
+    }
+
     @Override
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
 
         if (action.equals("greet")) {
 
             String name = data.getString(0);
-            String message = "Hello, " + MyApplication.getOtaAPI();
+            String message = "Hello, " + ((Boolean)app.getApi()==null);
             callbackContext.success(message);
 
             return true;
